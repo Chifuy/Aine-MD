@@ -157,9 +157,14 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
+    conn.sendHydrated(m.chat, text.trim(), 'Ⓟ premium | Ⓛ limit\n© Origami-Bot', null, 'https://instagram.com/origami_bot', 'Instagram Bot', '+62 857-4754-3536', 'Owner Number', [
+      ['Donate', '/donasi'],
+      ['Sewa', '/sewa'],
+      ['Owner', '/owner']
+    ], m)
     /*let url = `https://telegra.ph/file/66ccdf9dcc4ecfd67129e.jpg`
     let res = await fetch(url)
-    let buffer = await res.buffer()*/
+    let buffer = await res.buffer()
     let message = await prepareWAMessageMedia({ image: fs.readFileSync('./lib/Origami_Md.jpg') }, { upload: conn.waUploadToServer })
                 const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                     templateMessage: {
