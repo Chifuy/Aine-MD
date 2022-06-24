@@ -39,7 +39,7 @@ global.APIKeys = { // APIKey Here
 global.packname = 'Origami-Bot'
 global.author = 'Aron'
 global.wm = '© Origami-Bot'
-global.sticker_wait = 'Loading...'
+global.stiker_wait = 'Loading...'
 
 global.multiplier = 69 // The higher, The harder levelup
 
