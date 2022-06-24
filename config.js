@@ -35,30 +35,11 @@ global.APIKeys = { // APIKey Here
   'https://x-restapi.herokuapp.com': 'BETA'
 }
 
-process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = 0
-
-const spack = fs.readFileSync("lib/exif.json")
-const stickerpack = JSON.parse(spack)
-if (stickerpack.spackname == '') {
-  var sticker_name = 'Origami-Bot'
-  var sticker_author = 'Aron'
-} else {
-  var sticker_name = stickerpack.spackname
-  var sticker_author = stickerpack.sauthor
-}
-
-const file_exif = "lib/exif.json"
-fs.watchFile(file_exif, () => {
-  fs.unwatchFile(file_exif)
-  console.log(chalk.redBright("Update 'exif.json'"))
-  delete require.cache[file_exif]
-  require('./lib/exif.json')
-})
-
 // Sticker WM
-global.packname = sticker_name
-global.author = sticker_author
+global.packname = 'Origami-Bot'
+global.author = 'Aron'
 global.wm = '© Origami-Bot'
+global.sticker_wait = 'Loading...'
 
 global.multiplier = 69 // The higher, The harder levelup
 
