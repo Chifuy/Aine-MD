@@ -34,27 +34,28 @@ let tags = {
   'maker': 'Maker',
 }
 const defaultMenu = {
-  before: `
-Hai, %ucapan %name! 👋
-  
-*Waktu:* 
-%wib WIB
-%wita WITA
-%wit WIT
-*Hari:* %week
-*Tanggal:* %date
-*Uptime:* %uptime (%muptime)
+  before: `\n*Hay, ${ucapan()}*
 
-*Limit:* %limit
-*Level:* %level
-*XP:* %exp
+ *「   INFO   」*
+⫹⫺ Library : Baileys-Md
+⫹⫺ Version : 1.0.5
+⫹⫺ Mode : ${global.opts['self'] ? 'Self' : 'Publik'}
+⫹⫺ Author : Aron
+⫹⫺ Runtime : %uptime
+⫹⫺ Date : %date
+⫹⫺ Day : %week
+
+ *「   USER   」*
+⌦ Name : %name
+⌦ Limit : %limit
+⌦ Exp : %totalexp
+⌦ Level : %level
+⌦ Role : %role
 %readmore`.trimStart(),
-  header: ' *%category*',
-  body: ' • %cmd %islimit %isPremium',
-  footer: '\n',
-  after: `*Made by ♡*
-*%npmname* | %version
-${'```%npmdesc```'}
+  header: '*「   %category   」*',
+  body: '✾ %cmd %islimit %isPremium',
+  footer: '',
+  after: `\n
 `,
 }
 let handler = async (m, { conn, usedPrefix: _p }) => {
@@ -157,12 +158,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    conn.sendHydrated(m.chat, text.trim(), 'Ⓟ premium | Ⓛ limit', null, 'https://aiinne.github.io/', 'Website', '', '', [
-      ['Donate', '/donasi'],
-      ['Sewa Bot', '/sewa'],
-      ['Owner', '/owner']
-    ], m)
-    /*let url = `https://telegra.ph/file/ab1df70dfd5c2bac64da1.jpg`.trim()
+    let url = `https://telegra.ph/file/66ccdf9dcc4ecfd67129e.jpg'`.trim()
     let res = await fetch(url)
     let buffer = await res.buffer()
     let message = await prepareWAMessageMedia({ image: buffer }, { upload: conn.waUploadToServer })
@@ -171,11 +167,16 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
                         hydratedTemplate: {
                             imageMessage: message.imageMessage,
                             hydratedContentText: text.trim(),
-                            hydratedFooterText:'Ⓟ premium | Ⓛ limit',
+                            hydratedFooterText:'Ⓟ premium | Ⓛ limit\n' wm,
                             hydratedButtons: [{
                                 urlButton: {
-                                    displayText: 'Website',
-                                    url: 'https://Ainebot.github.io/'
+                                    displayText: 'Instagram Bot',
+                                    url: 'https://instagram.com/origami_bot'
+                                }
+                            }, {
+                                callButton: {
+                                    displayText: 'Owner Number',
+                                    Phone number: '+62 857-4754-3536'
                                 }
                             }, {
                                 quickReplyButton: {
