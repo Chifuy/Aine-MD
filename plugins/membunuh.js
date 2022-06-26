@@ -24,11 +24,11 @@ let nomors = m.sender
 }else conn.reply(m.chat, `Anda sudah membunuh orang dan berhasil sembunyi , tunggu ${timers} untuk membunuhnya lagi`, m)
 }
 
-handler.help = ['membunuh *@tag*']
+/*handler.help = ['membunuh *@tag*']
 handler.tags = ['rpg']
 handler.command = /^membunuh$/
 handler.limit = true
-handler.group = true
+handler.group = true*/
 
 module.exports = handler
 
