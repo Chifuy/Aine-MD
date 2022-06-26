@@ -16,7 +16,7 @@ handler.before = async function (m) {
 Hay, ${ucapan()} *${username.replace(/@.+/, '')}* 👋
 
 ${user.banned ? 'Kamu dibanned!!!\nSilahkan hubungi owner...' : `Perkenalkan aku adalah *${this.user.name}*,\nBot WhatsApp Indonesia\nApa ada yang bisa aku bantu?` }
-`.trim(), `*NOTE:*\nDilarang spam, call, video call atau pun minta save ke nomor ini\n\n*WhatsApp Bot By @${global.owner[0]}*`, null, [['⋮☰ MENU', '!menu']], m, { contextInfo: { mentionedJid: [global.owner[0] + '@s.whatsapp.net'] } })
+`.trim(), `*NOTE:*\nDilarang spam, call, video call ataupun\nminta save ke nomor ini\n\n*WhatsApp Bot By Aron*`, null, [['⋮☰ Menu', '!menu']], m)
     user.pc = new Date * 1
 }
 
