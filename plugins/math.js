@@ -2,13 +2,17 @@
 let handler = async (m, { conn, args, usedPrefix }) => {
   conn.math = conn.math ? conn.math : {}
   if (args.length < 1) throw `
-Mode: ${Object.keys(modes).join(' | ')}
+╭─「 Mode 」
+│ • ${Object.keys(modes).join('\n│ • ')}
+╰────
 
 Contoh penggunaan: ${usedPrefix}math medium
 `.trim()
   let mode = args[0].toLowerCase()
   if (!(mode in modes)) throw `
-Mode: ${Object.keys(modes).join(' | ')}
+╭─「 Mode 」
+│ • ${Object.keys(modes).join('\n│ • ')}
+╰────
 
 Contoh penggunaan: ${usedPrefix}math medium
 `.trim()
@@ -28,19 +32,21 @@ handler.help = ['math <mode>']
 handler.tags = ['game']
 handler.command = /^math/i
 handler.limit = true
-handler.group = true
+handler.group = false
 
 module.exports = handler
 
 let modes = {
-  noob: [-3, 3,-3, 3, '+-', 15000, 10],
-  easy: [-10, 10, -10, 10, '*/+-', 20000, 40],
-  medium: [-40, 40, -20, 20, '*/+-', 40000, 150],
-  hard: [-100, 100, -70, 70, '*/+-', 60000, 350],
-  extreme: [-999999, 999999, -999999, 999999, '*/', 30000, 9999],
-  impossible: [-99999999999, 99999999999, -99999999999, 999999999999, '*/', 30000, 35000],
-  impossible2: [-999999999999999, 999999999999999, -999, 999, '/', 30000, 50000]
-} 
+  noob: [-3, 3,-3, 3, '+-', 15000, 1000],
+  easy: [-10, 10, -10, 10, '*/+-', 20000, 2000],
+  medium: [-40, 40, -20, 20, '*/+-', 40000, 15000],
+  hard: [-100, 100, -70, 70, '*/+-', 60000, 30000],
+  extreme: [-999999, 999999, -999999, 999999, '*/', 99999, 50000],
+  impossible: [-99999999999, 99999999999, -99999999999, 999999999999, '*/', 50000, 99999],
+  impossible2: [-999999999999999, 999999999999999, -999, 999, '/', 50000, 150000],
+  impossible3: [-99999999999999999, 99999999999999999, -9999, 9999, '/', 55000, 200000],
+  prouser: [-99999999999999999999999, 999999999999999999999999, -9, 9, '/', 35000, 99999999999999]
+}
 
 let operators = {
   '+': '+',
