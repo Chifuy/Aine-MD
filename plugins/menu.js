@@ -47,6 +47,7 @@ const defaultMenu = {
  *「   USER   」*
 ⌦ Name : %name
 ⌦ Limit : %limit
+⌦ Atm : %bank
 ⌦ Exp : %totalexp
 ⌦ Level : %level
 ⌦ Role : %role
@@ -154,7 +155,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
       totalexp: exp,
       xp4levelup: max - exp,
       github: package.homepage ? package.homepage.url || package.homepage : '[unknown github url]',
-      level, limit, name, weton, week, date, dateIslamic, wib, wit, wita, time, totalreg, rtotalreg, role,
+      level, limit, name, weton, week, date, dateIslamic, wib, wit, wita, time, totalreg, rtotalreg, role, bank,
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
