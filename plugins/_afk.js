@@ -2,10 +2,10 @@ module.exports = {
   before(m) {
     let user = global.db.data.users[m.sender]
     if (user.afk > -1) {
-      m.reply(`
+      conn.sendButton(m.chat, `
 Kamu berhenti AFK${user.afkReason ? ' setelah ' + user.afkReason : ''}
 Selama ${clockString(new Date - user.afk)}
-`.trim())
+`.trim(), wm, null, [['⋮☰ Menu', '!menu', '⚕️ Profile', '!profile']], m)
       user.afk = -1
       user.afkReason = ''
     }
