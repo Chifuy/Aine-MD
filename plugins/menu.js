@@ -5,33 +5,33 @@ let fetch = require('node-fetch')
 let moment = require('moment-timezone')
 let levelling = require('../lib/levelling')
 let tags = {
-  'rpgabsen': 'Rpg-Absen',
-  'rpg': 'Rpg',
-  'game': 'Game',
-  'xp': 'Exp, Limit & Pay',
-  'sticker': 'Sticker',
-  'main': 'Main',
-  'kerang': 'Kerang Ajaib',
-  'quotes': 'Quotes',
-  'admin': 'Admin',
-  'group': 'Group',
-  'internet': 'Internet',
-  'anonymous': 'Anonymous Chat',
-  'downloader': 'Downloader',
-  'berita': 'Berita',
-  'tools': 'Tools',
-  'fun': 'Fun',
-  'database': 'Database', 
-  'vote': 'Voting',
-  'absen': 'Absen',
-  'catatan': 'Catatan',
-  'jadian': 'Jadian',
-  'islami': 'Islami',
-  'owner': 'Owner',
-  'advanced': 'Advanced',
-  'info': 'Info',
-  'audio': 'Audio',
-  'maker': 'Maker',
+  'rpgabsen': 'RPG-ABSEN',
+  'rpg': 'RPG',
+  'game': 'GAME',
+  'xp': 'EXP, LIMIT & PAY',
+  'sticker': 'STICKER',
+  'main': 'MAIN',
+  'kerang': 'KERANG AJAIB',
+  'quotes': 'QUOTES',
+  'admin': 'ADMIN',
+  'group': 'GROUP',
+  'internet': 'INTERNET',
+  'anonymous': 'ANONYMOUS CHAT',
+  'downloader': 'DOWNLOADER',
+  'berita': 'BERITA',
+  'tools': 'TOOLS',
+  'fun': 'FUN',
+  'database': 'DATABASE', 
+  'vote': 'VOTING',
+  'absen': 'ABSEN',
+  'catatan': 'CATATAN',
+  'jadian': 'JADIAN',
+  'islami': 'ISLAMI',
+  'owner': 'OWNER',
+  'advanced': 'ADVANCED',
+  'info': 'INFO',
+  'audio': 'AUDIO',
+  'maker': 'MAKER',
 }
 const defaultMenu = {
   before: `\n*Hay, ${ucapan()}*
@@ -162,7 +162,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
       ['Donate', '/donasi'],
       ['Sewa', '/sewa'],
       ['Owner', '/owner']
-    ], m)
+    ],{ quoted: m })
     /*let url = `https://telegra.ph/file/66ccdf9dcc4ecfd67129e.jpg`
     let res = await fetch(url)
     let buffer = await res.buffer()
