@@ -13,10 +13,10 @@ handler.before = async function (m) {
     if (new Date - user.pc < 86400000) return // setiap 24 jam sekali
  //   await conn.modifyChat(m.chat, 'mute', -Math.floor(new Date / 1e3) * 1e3 - 1e3).catch(console.log)
     await this.sendButton(m.chat, `
-Hai ${ucapan()} *${username.replace(/@.+/, '')}* 👋
+Hay, ${ucapan()} *${username.replace(/@.+/, '')}* 👋
 
-${banned ? `kamu *terbanned* kak 😕\nHubungi: wa.me/${owner[0]}` : 'Ada yang bisa saya bantu?'}
-`.trim(), wm, null, [['Menu', '/menu']], m)
+${user.banned ? 'Kamu dibanned!!!\nSilahkan hubungi owner...' : `Perkenalkan aku adalah *${this.user.name}*,\nBot WhatsApp Indonesia\nApa ada yang bisa aku bantu?` }
+`.trim(), `*NOTE:*\nDilarang spam, call, video call atau pun minta save ke nomor ini\n\n*WhatsApp Bot By @${global.owner[0]}*`, null, [['⋮☰ MENU', '!menu']], m, { contextInfo: { mentionedJid: [global.owner[0] + '@s.whatsapp.net'] } })
     user.pc = new Date * 1
 }
 
