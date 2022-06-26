@@ -21,11 +21,11 @@ let nomors = m.sender
 
 }else conn.reply(m.chat, `Anda Sudah merampok dan berhasil sembunyi , tunggu ${timers} untuk merampok lagi`, m)
 }
-handler.help = ['merampok *@tag*']
+/*handler.help = ['merampok *@tag*']
 handler.tags = ['rpg']
 handler.command = /^merampok$/
 handler.limit = true
-handler.group = true
+handler.group = true*/
 
 module.exports = handler
 
