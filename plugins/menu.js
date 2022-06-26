@@ -50,6 +50,7 @@ const defaultMenu = {
 ⌦ Exp : %totalexp
 ⌦ Level : %level
 ⌦ Role : %role
+
 %readmore`.trimStart(),
   header: '*「   %category   」*',
   body: '✾ %cmd %islimit %isPremium',
@@ -157,7 +158,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    conn.sendHydrated(m.chat, text.trim(), 'Ⓟ premium | Ⓛ limit\n© Origami-Bot', null, 'https://instagram.com/origami_bot', 'Instagram Bot', '+62 857-4754-3536', 'Owner Number', [
+    conn.sendHydrated(m.chat, text.trim(), '© Origami-Bot', null, 'https://instagram.com/origami_bot', 'Instagram Bot', '+62 857-4754-3536', 'Owner Number', [
       ['Donate', '/donasi'],
       ['Sewa', '/sewa'],
       ['Owner', '/owner']
@@ -167,11 +168,11 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
     let buffer = await res.buffer()
     let message = await prepareWAMessageMedia({ image: fs.readFileSync('./lib/Origami_Md.jpg') }, { upload: conn.waUploadToServer })
                 const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
-                    templateMessage: {
+                    atemplateMessage: {
                         hydratedTemplate: {
                             imageMessage: message.imageMessage,
                             hydratedContentText: text.trim(),
-                            hydratedFooterText:'Ⓟ premium | Ⓛ limit\n' wm,
+                            hydratedFooterText: wm,
                             hydratedButtons: [{
                                 urlButton: {
                                     displayText: 'Instagram Bot',
