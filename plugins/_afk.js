@@ -5,7 +5,7 @@ module.exports = {
       conn.sendButton(m.chat, `
 Kamu berhenti AFK${user.afkReason ? ' setelah ' + user.afkReason : ''}
 Selama ${clockString(new Date - user.afk)}
-`.trim(), wm, null, [['⋮☰ Menu', '!menu', '⚕️ Profile', '!profile']], m)
+`.trim(), wm, null, [['⋮☰ Menu', '!menu']], m)
       user.afk = -1
       user.afkReason = ''
     }
