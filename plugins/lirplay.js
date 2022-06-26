@@ -58,7 +58,7 @@ handler.help = ['lirplay', 'lirplay2']
 handler.tags = ['downloader']
 handler.command = /^lirplay2?$/i
 handler.premium = false
-handler.group = true
+handler.group = false
 
 handler.exp = 0
 handler.limit = true
