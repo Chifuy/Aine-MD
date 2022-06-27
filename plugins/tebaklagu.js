@@ -17,7 +17,7 @@ let handler = async (m, { conn, usedPrefix }) => {
     let caption = `
 TEBAK JUDUL LAGU 
 Artis : ${json.artis}
-Judul : _____
+Judul : (apa hayo..)
 Timeout *${(timeout / 1000).toFixed(2)} detik*
 Ketik *${usedPrefix}cek* untuk bantuan
 Bonus: ${poin} XP
@@ -37,5 +37,5 @@ handler.help = ['tebaklagu']
 handler.tags = ['game']
 handler.command = /^tebaklagu$/i
 handler.limit = true
-handler.group = true
+handler.group = false
 module.exports = handler
