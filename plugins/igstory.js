@@ -101,7 +101,7 @@ function igstory(username) {
 
 
 
-let axios = require('axios')
+/*let axios = require('axios')
 let cheerio = require('cheerio')
 let fetch = require('node-fetch')
 
@@ -116,12 +116,27 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
       await conn.delay(1500)
       conn.sendFile(m.chat, url, 'ig' + (type == 'image' ? '.jpg' : '.mp4'), '', m)
     }
-}
+}*/
+
+
+const hx = require('hxz-api')
+
+let handler = async (m, { conn, args }) => {
+  if (/https?:\/\/(www\.)?instagram\.com\/(p|reel|tv)/i.test(m.text)) throw `Masukkan username Instagram, bukan link instagramnya!`
+   if (!args[0]) throw `Masukkan username Instagram yang ingin diambil story nya!`
+   else m.reply('Proses')
+
+   hx.igstory(args[0]).then(async (r) => {
+     for (let i = 0; i < r.medias.length; i++) {
+       conn.sendFile(m.chat, r.medias[i].url, '', '', m)
+       }
+     })
+   }
 handler.help = ['igstory'].map(v => v + ' <username>')
 handler.tags = ['downloader']
 handler.command = /^(igs(tory)?)$/i
 handler.limit = true
-handler.group = true
+handler.group = false
 
 module.exports = handler
 
