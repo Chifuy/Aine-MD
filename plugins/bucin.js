@@ -122,7 +122,7 @@ let bucin = [
   "Cukup antartika aja yang jauh. Antarkita jangan."
 ]
 let dia = bucin[Math.floor(Math.random() * bucin.length)]
-  conn.reply(m.chat,`“${dia}”`, m)
+  conn.sendButton(m.chat,`“${dia}”`, wm, null, [['Bucin', '!bucin']], m)
 }
 handler.help = ['bucin']
 handler.tags = ['quotes']
@@ -132,7 +132,7 @@ handler.mods = false
 handler.premium = false
 handler.group = false
 handler.private = false
-handler.limit = true
+handler.limit = false
 handler.admin = false
 handler.botAdmin = false
 
