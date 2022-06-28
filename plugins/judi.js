@@ -9,7 +9,7 @@ let handler = async (m, { conn, args, usedPrefix, isOwner }) => {
         let waktutionskh = clockString(_waktutionskh)
         if (new Date - global.db.data.users[m.sender].judilast > 5000) {
         global.db.data.users[m.sender].judilast = new Date * 1
-        let randomaku = `${Math.floor(Math.random() * 101)}`.trim()
+        let randomaku = `${Math.floor(Math.random() * 75)}`.trim()
         let randomkamu = `${Math.floor(Math.random() * 75)}`.trim()                //hehe Biar Susah Menang :v
         let Aku = (randomaku * 1)
         let Kamu = (randomkamu * 1)
@@ -19,15 +19,15 @@ let handler = async (m, { conn, args, usedPrefix, isOwner }) => {
         if (args.length < 1) return conn.reply(m.chat, usedPrefix + 'judi <jumlah>\n ' + usedPrefix + 'judi 1000', m)
         if (global.db.data.users[m.sender].money >= count * 1) {
             global.db.data.users[m.sender].money -= count * 1
-            await m.reply('*Jangan judi gk bakal menang!!, kalau gk percaya gpp*') //Kwkwwkkwlwlw
+            //await m.reply('*Jangan judi gk bakal menang!!, kalau gk percaya gpp*') //Kwkwwkkwlwlw
             if (Aku > Kamu) {
-                conn.reply(m.chat, `aku roll:${Aku}\nKamu roll: ${Kamu}\n\nkamu *Kalah*, kamu kehilangan ${count} money`.trim(), m)
+                conn.reply(m.chat, `Aku roll:${Aku}\nKamu roll: ${Kamu}\n\nkamu *Kalah*, kamu kehilangan ${count} money`.trim(), m)
             } else if (Aku < Kamu) {
                 global.db.data.users[m.sender].money += count * 2
-                conn.reply(m.chat, `aku roll:${Aku}\nKamu roll: ${Kamu}\n\nkamu *Menang*, kamu Mendapatkan ${count * 2} money`.trim(), m)
+                conn.reply(m.chat, `Aku roll:${Aku}\nKamu roll: ${Kamu}\n\nkamu *Menang*, kamu Mendapatkan ${count * 2} money`.trim(), m)
             } else {
                 global.db.data.users[m.sender].money += count * 1
-                conn.reply(m.chat, `aku roll:${Aku}\nKamu roll: ${Kamu}\n\nkamu *Seri*, kamu Mendapatkan ${count * 1} money`.trim(), m)
+                conn.reply(m.chat, `Aku roll:${Aku}\nKamu roll: ${Kamu}\n\nkamu *Seri*, kamu Mendapatkan ${count * 1} money`.trim(), m)
             }
         } else conn.reply(m.chat, `Money kamu tidak cukup untuk melakukan judi sebesar ${count} money`.trim(), m)
       } else conn.reply(m.chat, `Kamu sudah judi, tidak bisa judi kembali..\nMohon tunggu ${waktutionskh} lagi untuk judi kembali `, m)
@@ -41,9 +41,7 @@ let handler = async (m, { conn, args, usedPrefix, isOwner }) => {
 handler.help = ['judi <jumlah>']
 handler.tags = ['game']
 handler.command = /^(judi)$/i
-handler.limit = true
 handler.group = true
-
 handler.fail = null
 
 module.exports = handler
