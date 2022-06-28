@@ -21,7 +21,7 @@ Bonus: ${poin} XP
 Tiketcoin: ${tiketcoin} TiketCoin
 `.trim()
     conn.asahotak[id] = [
-        await conn.reply(m.chat, caption, m),
+        await conn.sendButton(m.chat, caption, wm, null, [['Bantuan', '!ao']], m),
         json, poin,
         setTimeout(() => {
             if (conn.asahotak[id]) conn.reply(m.chat, `Waktu habis!\nJawabannya adalah *${json.jawaban}*`, conn.asahotak[id][0])
@@ -32,7 +32,7 @@ Tiketcoin: ${tiketcoin} TiketCoin
 handler.help = ['asahotak']
 handler.tags = ['game']
 handler.command = /^asahotak/i
-handler.limit = true
-handler.group = true
+handler.limit = false
+handler.group = false
 
 module.exports = handler
