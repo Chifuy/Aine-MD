@@ -21,7 +21,7 @@ Bonus: ${poin} XP
 Tiketcoin: ${tiketcoin} TiketCoin
 `.trim()
     conn.caklontong[id] = [
-        await conn.reply(m.chat, caption, m),
+        await conn.sendButton(m.chat, caption, wm, null, [['Bantuan', '!calo']], m),
         json, poin,
         setTimeout(() => {
             if (conn.caklontong[id]) conn.reply(m.chat, `Waktu habis!\nJawabannya adalah *${json.jawaban}*\n${json.deskripsi}`, conn.caklontong[id][0])
@@ -32,6 +32,6 @@ Tiketcoin: ${tiketcoin} TiketCoin
 handler.help = ['caklontong']
 handler.tags = ['game']
 handler.command = /^caklontong/i
-handler.limit = true
+handler.limit = false
 
 module.exports = handler
