@@ -10,5 +10,5 @@ m.reply(`_${indo}_\n\n_${character}_\n_${anime}_`)
 handler.help = ['quotesanime']
 handler.tags = ['quotes']
 handler.command = /^(quotesanime|animequotes|kataanime)$/i
-handler.limit = true
+handler.limit = false
 module.exports = handler
