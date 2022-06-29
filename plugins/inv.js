@@ -223,8 +223,8 @@ Serigala: *${serigala == 0 ? 'Tidak Punya' : '' || serigala == 1 ? 'Level 1' : '
 handler.help = ['inv']
 handler.tags = ['rpg']
 handler.command = /^(inv|inventory)$/i
-handler.limit = true
-handler.group = true
+handler.limit = false
+handler.group = false
 module.exports = handler
 
 const more = String.fromCharCode(8206)
