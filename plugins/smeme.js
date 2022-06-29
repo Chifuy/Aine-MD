@@ -22,8 +22,6 @@ handler.help = ['smeme']
 handler.tags = ['sticker']
 handler.command = /^smeme$/i
 
-handler.limit = true
-
 handler.fail = null
 
 module.exports = handler
