@@ -1,5 +1,5 @@
 let fetch = require('node-fetch')
-let handler = async (m, { conn, usedPrefix }) => conn.sendButtkm(m.chat, `
+let handler = async (m, { conn, usedPrefix }) => conn.sendButton(m.chat, `
 Hay, ${conn.getName(m.sender)}👋🏻
 Welcome to Anonymous Chat!
 
