@@ -5,12 +5,13 @@ let fetch = require('node-fetch')
 let moment = require('moment-timezone')
 let levelling = require('../lib/levelling')
 let tags = {
+  'main': 'MAIN',
   'rpgabsen': 'RPG-ABSEN',
   'rpg': 'RPG',
   'game': 'GAME',
   'xp': 'EXP, LIMIT & PAY',
   'sticker': 'STICKER',
-  'main': 'MAIN',
+  //'main': 'MAIN',
   'kerang': 'KERANG AJAIB',
   'quotes': 'QUOTES',
   'admin': 'ADMIN',
