@@ -1,5 +1,5 @@
 let fetch = require('node-fetch')
-let handler = async (m, { conn, usedPrefix }) => conn.send3ButtonLoc(m.chat, await (await fetch(fla + 'ANONYMOUS CHAT')).buffer(), `
+let handler = async (m, { conn, usedPrefix }) => conn.sendButtkm(m.chat, `
 Hay, ${conn.getName(m.sender)}👋🏻
 Welcome to Anonymous Chat!
 
@@ -8,6 +8,7 @@ Ketik /next untuk skip/lanjut
 Ketik /leave untuk keluar/stop
 Ketik /sendkontak untuk mengirim kontak
 `.trim(), 'Anonymous Chat\n© Origami-Bot', null, [['/start', '!start'], ['/next',  '!next'], ['/leave', '!leave']], m)
+
 handler.help = ['anonymous']
 handler.tags = ['main']
 handler.command = /^anony(mous|chat)$/i
