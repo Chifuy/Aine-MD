@@ -3,12 +3,10 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
         'open': 'not_announcement',
         'close': 'announcement',
     }[(args[0] || '')]
-    if (isClose === undefined)
-        throw `
-*Format salah! Contoh :*
-  *○ ${usedPrefix + command} close*
-  *○ ${usedPrefix + command} open*
-`.trim()
+    if (isClose === undefined) {
+        await conn.sendButton(m.chat, `Owkh.. group berhasil di ${args[0]}`, wm, null,
+        [['Group Open', '!group Open'], ['Group Close', '!group Close']], m)
+     throw false }
     await conn.groupSettingUpdate(m.chat, isClose)
 }
 handler.help = ['group *open / close*']
