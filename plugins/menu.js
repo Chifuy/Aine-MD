@@ -22,7 +22,7 @@ let tags = {
   'berita': 'BERITA',
   'tools': 'TOOLS',
   'fun': 'FUN',
-  'database': 'DATABASE', 
+  //'database': 'DATABASE', 
   'vote': 'VOTING',
   'absen': 'ABSEN',
   'catatan': 'CATATAN',
