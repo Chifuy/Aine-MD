@@ -4,6 +4,7 @@ let path = require('path')
 let fetch = require('node-fetch')
 let moment = require('moment-timezone')
 let levelling = require('../lib/levelling')
+let image = 'https://telegra.ph/file/66ccdf9dcc4ecfd67129e.jpg'
 let tags = {
   'main': 'MAIN',
   'rpgabsen': 'RPG-ABSEN',
@@ -161,7 +162,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    conn.sendHydrated(m.chat, text.trim(), '© Origami-Bot', null, 'https://instagram.com/origami_bot', 'Instagram Bot', '+62 857-4754-3536', 'Owner Number', [
+    conn.sendHydrated(m.chat, text.trim(), '© Origami-Bot', await (await fetch(image)).buffer(), 'https://instagram.com/origami_bot', 'Instagram Bot', '+62 857-4754-3536', 'Owner Number', [
       ['Donate', '/donasi'],
       ['Sewa', '/sewa'],
       ['Owner', '/owner']
