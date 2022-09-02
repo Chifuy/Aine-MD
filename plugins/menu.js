@@ -42,6 +42,7 @@ const defaultMenu = {
 ⫹⫺ Version : 1.0.5
 ⫹⫺ Author : Aron
 ⫹⫺ Runtime : %uptime
+⫹⫺ time : %wib WIB
 ⫹⫺ Date : %date
 ⫹⫺ Day : %week
 
