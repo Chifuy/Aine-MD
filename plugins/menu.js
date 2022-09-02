@@ -162,7 +162,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    conn.sendHydrated(m.chat, text.trim(), wm, await (await fetch(image)).buffer(), 'https://instagram.com/origami_bot', 'Instagram Bot', '+62 857-4754-3536', 'Owner Number', [
+    conn.sendHydrated(m.chat, text.trim(), '© Origami-Bot', await (await fetch(image)).buffer(), 'https://instagram.com/origami_bot', 'Instagram Bot', '+62 857-4754-3536', 'Owner Number', [
       ['Donate', '/donasi'],
       ['Sewa', '/sewa'],
       ['Owner', '/owner']
