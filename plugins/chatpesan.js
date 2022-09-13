@@ -1,4 +1,4 @@
-
+CD mo
 let handler = async(m, { conn, text, usedPrefix }) => {
 let [number, pesan] = text.split `|`
 
@@ -12,7 +12,7 @@ let [number, pesan] = text.split `|`
     var nomor = m.sender
     let spam1 = `*「 SUKSES 」*\n\nDari : wa.me/${korban}\nPesan : ${pesan}\n\n*${global.wm}*`
 
-    conn.reply(korban + '@s.whatsapp.net', spam1, m)
+    conn.reply(m.chat, spam1, m)
 
     let logs = `[!] Berhasil mengirim pesan wa ke nomor ${korban}`
     conn.reply(m.chat, logs, m)
