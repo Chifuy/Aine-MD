@@ -12,7 +12,7 @@ let [number, pesan] = text.split `|`
     var nomor = m.sender
     let spam1 = `${pesan}\n\n_Ini Chat Dari Orang Yang Mungkin Kamu Kenal :)_`
 
-    conn.reply(m.chat, spam1, m)
+    conn.sendMessage(m.chat, spam1, m)
 
     let logs = `[!] Berhasil mengirim pesan wa ke nomor ${korban}`
     conn.reply(m.chat, logs, m)
